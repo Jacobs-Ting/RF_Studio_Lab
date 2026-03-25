@@ -15,25 +15,25 @@ const simulations = [
         id: 'Bluetooth',
         title: '📶 Bluetooth PHY Simulation',
         description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.',
-        defaultUrl: 'https://example.com/bluetooth'
+        defaultUrl: 'https://bluetooth-phy-simulation-mbz7pibmpmdd2hmnjnkzmc.streamlit.app'
     },
     {
         id: 'WiFi',
         title: '📶 WiFi PHY Simulation',
         description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.',
-        defaultUrl: 'https://example.com/wifi'
+        defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/'
     },
     {
         id: 'GNSS',
         title: '🛰️ GNSS Simulation',
         description: 'Simulates Global Navigation Satellite System (GNSS) signal acquisition, Doppler shift, and positioning algorithms.',
-        defaultUrl: 'https://example.com/gnss'
+        defaultUrl: 'https://gnsssimulation-jnhfeccymaqxgjgact2daf.streamlit.app'
     },
     {
         id: 'RFID',
         title: '🏷️ RFID-Echo Cancellation Simulator',
         description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.',
-        defaultUrl: 'https://example.com/rfid'
+        defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app'
     }
 ];
 
