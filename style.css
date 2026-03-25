@@ -1,0 +1,257 @@
+:root {
+    --bg-color: #0b1120;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #2c59b3;
+    
+    /* Card Background Colors (Glassmorphism) */
+    --card-bg-5g: rgba(30, 58, 138, 0.25);
+    --card-bg-mmwave: rgba(6, 95, 70, 0.25);
+    --card-bg-bt: rgba(76, 29, 149, 0.25);
+    --card-bg-wifi: rgba(113, 63, 18, 0.25);
+    --card-bg-gnss: rgba(127, 29, 29, 0.25);
+    --card-bg-rfid: rgba(17, 94, 89, 0.25);
+
+    /* Card Borders (Glassmorphism) */
+    --card-border-5g: rgba(59, 130, 246, 0.4);
+    --card-border-mmwave: rgba(16, 185, 129, 0.4);
+    --card-border-bt: rgba(139, 92, 246, 0.4);
+    --card-border-wifi: rgba(234, 179, 8, 0.4);
+    --card-border-gnss: rgba(239, 68, 68, 0.4);
+    --card-border-rfid: rgba(20, 184, 166, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border: 1px solid transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* 3D Depth: Outer drop shadow + Inner top light (bevel) + Inner bottom shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 
+                inset 0 2px 10px rgba(255, 255, 255, 0.15), 
+                inset 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    /* Increased elevation shadow and stronger inner edge light to enhance 3D popping out */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.6), 
+                inset 0 3px 15px rgba(255, 255, 255, 0.25), 
+                inset 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #60a5fa; /* A subtle blue link color for title */
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.card:hover h3 {
+    text-decoration-color: #60a5fa;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+/* Card Specific Styles */
+.card-5G_NR { background-color: var(--card-bg-5g); border-color: var(--card-border-5g) }
+.card-mmWave { background-color: var(--card-bg-mmwave); border-color: var(--card-border-mmwave) }
+.card-Bluetooth { background-color: var(--card-bg-bt); border-color: var(--card-border-bt) }
+.card-WiFi { background-color: var(--card-bg-wifi); border-color: var(--card-border-wifi) }
+.card-GNSS { background-color: var(--card-bg-gnss); border-color: var(--card-border-gnss) }
+.card-RFID { background-color: var(--card-bg-rfid); border-color: var(--card-border-rfid) }
+
+footer .tip {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Modal and URL Input Styles */
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 1.2rem;
+}
+
+#url-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.input-group input {
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn.primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
