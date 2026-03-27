@@ -12,7 +12,7 @@ const studios = [
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
             { id: 'Bluetooth', title: 'Bluetooth', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-mbz7pibmpmdd2hmnjnkzmc.streamlit.app' },
-            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-qfcr6baya9fmwrhmyb4shm.streamlit.app' }
+            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://example.com/uwb' }
         ]
     },
     {
@@ -22,7 +22,7 @@ const studios = [
         description: 'mmWave Phased Array antennas and Beamforming simulations.',
         themeClass: 'card-mmWave',
         simulations: [
-            { id: 'mmwave_mod', title: 'mmWave Link Budget Analysis', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
+            { id: 'mmwave_mod', title: 'mmWave modulation', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
             { id: 'mmwave_sidelobe', title: 'mmWave Sidelobe Improve', description: 'Sidelobe improvement and suppression techniques.', defaultUrl: 'https://example.com/sidelobe' },
             { id: 'mmwave_phase', title: 'mmWave Phase shifter Calibration', description: 'Phase shifter calibration algorithms.', defaultUrl: 'https://example.com/phase' }
         ]
@@ -34,9 +34,9 @@ const studios = [
         description: 'Power Integrity and Signal Integrity simulations.',
         themeClass: 'card-GNSS',
         simulations: [
-            { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://signalintegrationsimulation-tool-otcmwvh5hdwhr2n2dbvoox.streamlit.app' },
-            { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://example.com/pi' }
-            { id: 'Impend_sim', title: 'Impendance Control', description: 'Impendance calculation and visualization.', defaultUrl: 'https://example.com/impendance' } 
+            { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://example.com/si' },
+            { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://example.com/pi' },
+            { id: 'impedance_control', title: 'Impedance Control', description: 'Impedance control analysis and visualization.', defaultUrl: 'https://example.com/impedance' }
         ]
     }
 ];
@@ -52,12 +52,14 @@ const getAllSimulations = () => {
 
 // Load URLs from local storage or use defaults
 const loadUrls = () => {
-    const saved = localStorage.getItem('simulationUrls');
-    if (saved) {
-        return JSON.parse(saved);
-    }
     const defaults = {};
     getAllSimulations().forEach(sim => defaults[sim.id] = sim.defaultUrl);
+    
+    const saved = localStorage.getItem('simulationUrls');
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        return { ...defaults, ...parsed };
+    }
     return defaults;
 };
 
