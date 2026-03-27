@@ -22,7 +22,7 @@ const studios = [
         description: 'mmWave Phased Array antennas and Beamforming simulations.',
         themeClass: 'card-mmWave',
         simulations: [
-            { id: 'mmwave_mod', title: 'mmWave modulation', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
+            { id: 'mmwave_mod', title: 'mmWave Link Budget Analysis', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
             { id: 'mmwave_sidelobe', title: 'mmWave Sidelobe Improve', description: 'Sidelobe improvement and suppression techniques.', defaultUrl: 'https://example.com/sidelobe' },
             { id: 'mmwave_phase', title: 'mmWave Phase shifter Calibration', description: 'Phase shifter calibration algorithms.', defaultUrl: 'https://example.com/phase' }
         ]
