@@ -79,6 +79,21 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.folder-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.folder-container .card {
+    width: 350px; /* Fixed width to force exactly 2 to fit in an 800px container, wrapping the 3rd to center */
+}
+
 /* Cards */
 .card {
     border-radius: 12px;
@@ -253,5 +268,9 @@ footer .tip {
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
+    }
+    
+    .folder-container .card {
+        width: 100%;
     }
 }

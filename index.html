@@ -13,15 +13,17 @@
     <div class="container">
         <header>
             <div class="header-top">
-                <h1 class="main-title"> RF System Research Studio</h1>
-                <button id="settings-btn" class="icon-btn" title="Configure Links">⚙️</button>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="back-btn" class="icon-btn" style="display: none; font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">Back</button>
+                    <h1 class="main-title" id="page-title">Research Studios</h1>
+                </div>
+                <button id="settings-btn" class="icon-btn" title="Configure Links" style="font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">Settings</button>
             </div>
 
-            <h2 class="subtitle">Advanced Communication PHY & Array Simulations</h2>
+            <h2 class="subtitle" id="page-subtitle">Select a research studio to view advanced simulation platforms.</h2>
 
-            <p class="description">
-                This section features advanced communication physical layer (PHY) simulation platforms I developed.
-                Click the links below to access the independent interactive simulation web pages:
+            <p class="description" id="page-desc">
+                Click on the studio folders below to explore independent interactive simulation web pages.
             </p>
         </header>
 
@@ -30,7 +32,7 @@
         </main>
 
         <footer>
-            <p class="tip">💡 Tip: Click on the bold titles above to open the respective simulation tools in a new tab.
+            <p class="tip">Tip: Click on the bold titles above to open the respective simulation tools in a new tab.
             </p>
         </footer>
     </div>
@@ -40,7 +42,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Configure Simulation URLs</h2>
-                <button id="close-modal" class="icon-btn">❌</button>
+                <button id="close-modal" class="icon-btn">&times;</button>
             </div>
             <form id="url-form">
                 <!-- Inputs generated dynamically -->
