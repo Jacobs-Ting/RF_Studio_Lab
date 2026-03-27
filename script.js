@@ -12,7 +12,7 @@ const studios = [
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
             { id: 'Bluetooth', title: 'Bluetooth', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-mbz7pibmpmdd2hmnjnkzmc.streamlit.app' },
-            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://example.com/uwb' }
+            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-qfcr6baya9fmwrhmyb4shm.streamlit.app' }
         ]
     },
     {
@@ -36,7 +36,7 @@ const studios = [
         simulations: [
             { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://example.com/si' },
             { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://example.com/pi' },
-            { id: 'impedance_control', title: 'Impedance Control', description: 'Impedance control analysis and visualization.', defaultUrl: 'https://impedance-calculation-kejk5wu4g7vbeo9ks2nsiy.streamlit.app/' }
+            { id: 'impedance_control', title: 'Impedance Control', description: 'Impedance control analysis and visualization.', defaultUrl: 'https://impedance-calculation-kejk5wu4g7vbeo9ks2nsiy.streamlit.app' }
         ]
     }
 ];
