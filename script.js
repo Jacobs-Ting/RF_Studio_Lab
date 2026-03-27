@@ -36,6 +36,7 @@ const studios = [
         simulations: [
             { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://signalintegrationsimulation-tool-otcmwvh5hdwhr2n2dbvoox.streamlit.app' },
             { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://example.com/pi' }
+            { id: 'Impend_sim', title: 'Impendance Control', description: 'Impendance calculation and visualization.', defaultUrl: 'https://example.com/impendance' } 
         ]
     }
 ];
