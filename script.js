@@ -55,7 +55,9 @@ const loadUrls = () => {
     const defaults = {};
     getAllSimulations().forEach(sim => defaults[sim.id] = sim.defaultUrl);
 
-    const saved = localStorage.getItem('simulationUrls');
+    // We use a new key 'simulationUrls_v2' to avoid loading stale defaults 
+    // from an older version where all URLs were saved.
+    const saved = localStorage.getItem('simulationUrls_v2');
     if (saved) {
         const parsed = JSON.parse(saved);
         return { ...defaults, ...parsed };
@@ -199,6 +201,7 @@ backBtn.addEventListener('click', () => {
 saveUrlsBtn.addEventListener('click', () => {
     const inputs = form.querySelectorAll('input');
     let hasError = false;
+    const overrides = {};
 
     inputs.forEach(input => {
         if (!input.checkValidity()) {
@@ -206,11 +209,18 @@ saveUrlsBtn.addEventListener('click', () => {
             hasError = true;
         } else {
             currentUrls[input.name] = input.value;
+            
+            // Only save if it differs from the default URL
+            const sim = getAllSimulations().find(s => s.id === input.name);
+            if (sim && input.value !== sim.defaultUrl) {
+                overrides[input.name] = input.value;
+            }
         }
     });
 
     if (!hasError) {
-        localStorage.setItem('simulationUrls', JSON.stringify(currentUrls));
+        // Save only explicit overrides so code updates to defaultUrl take effect automatically
+        localStorage.setItem('simulationUrls_v2', JSON.stringify(overrides));
         // Re-render current view to catch updates
         if (currentStudioId) {
             renderStudio(currentStudioId);
