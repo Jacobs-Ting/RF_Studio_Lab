@@ -34,8 +34,8 @@ const studios = [
         description: 'Power Integrity and Signal Integrity simulations.',
         themeClass: 'card-GNSS',
         simulations: [
-            { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://example.com/si' },
-            { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://example.com/pi' },
+            { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://signalintegrationsimulation-tool-otcmwvh5hdwhr2n2dbvoox.streamlit.app' },
+            { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://pdn-simulation-xv6ckuvqlrezcepkjjyes4.streamlit.app' },
             { id: 'impedance_control', title: 'Impedance Control', description: 'Impedance control analysis and visualization.', defaultUrl: 'https://impedance-calculation-kejk5wu4g7vbeo9ks2nsiy.streamlit.app' }
         ]
     }
@@ -54,7 +54,7 @@ const getAllSimulations = () => {
 const loadUrls = () => {
     const defaults = {};
     getAllSimulations().forEach(sim => defaults[sim.id] = sim.defaultUrl);
-    
+
     const saved = localStorage.getItem('simulationUrls');
     if (saved) {
         const parsed = JSON.parse(saved);
@@ -85,7 +85,7 @@ const renderFolders = () => {
     currentStudioId = null;
     cardsContainer.className = 'folder-container'; // Set to folder layout
     cardsContainer.innerHTML = '';
-    
+
     pageTitle.textContent = 'Research Studios';
     pageSubtitle.textContent = 'Select a research studio to view advanced simulation platforms.';
     pageDesc.textContent = 'Click on the studio folders below to explore independent interactive simulation web pages.';
@@ -98,17 +98,17 @@ const renderFolders = () => {
         card.style.textAlign = 'center';
         card.style.justifyContent = 'center';
         card.style.minHeight = '180px';
-        
+
         card.innerHTML = `
             <h3 style="font-size: 1.4rem; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; margin: 0;">
                 ${studio.shortTitle}
             </h3>
         `;
-        
+
         card.addEventListener('click', () => {
             renderStudio(studio.id);
         });
-        
+
         cardsContainer.appendChild(card);
     });
 };
@@ -118,7 +118,7 @@ const renderStudio = (studioId) => {
     currentStudioId = studioId;
     cardsContainer.className = 'grid-container'; // Restore grid layout
     cardsContainer.innerHTML = '';
-    
+
     const studio = studios.find(s => s.id === studioId);
     if (!studio) return;
 
@@ -136,12 +136,12 @@ const renderStudio = (studioId) => {
         // Give sub-cards the parent folder's theme class for consistency, or pick uniquely.
         // We will default to parent theme class.
         card.className = `card ${studio.themeClass}`;
-        
+
         card.innerHTML = `
             <h3>${sim.title}</h3>
             ${sim.description ? `<p>${sim.description}</p>` : ''}
         `;
-        
+
         cardsContainer.appendChild(card);
     });
 };
@@ -149,7 +149,7 @@ const renderStudio = (studioId) => {
 // Render form inputs inside Modal
 const renderForm = () => {
     form.innerHTML = '';
-    
+
     // Create sections for each studio to make the form easier to read
     studios.forEach(studio => {
         const header = document.createElement('h3');
@@ -162,15 +162,15 @@ const renderForm = () => {
 
         studio.simulations.forEach(sim => {
             const value = currentUrls[sim.id] || sim.defaultUrl;
-            
+
             const group = document.createElement('div');
             group.className = 'input-group';
-            
+
             group.innerHTML = `
                 <label for="input-${sim.id}">${sim.title}</label>
                 <input type="url" id="input-${sim.id}" name="${sim.id}" value="${value}" placeholder="https://..." required>
             `;
-            
+
             form.appendChild(group);
         });
     });
@@ -199,7 +199,7 @@ backBtn.addEventListener('click', () => {
 saveUrlsBtn.addEventListener('click', () => {
     const inputs = form.querySelectorAll('input');
     let hasError = false;
-    
+
     inputs.forEach(input => {
         if (!input.checkValidity()) {
             input.reportValidity();
@@ -208,7 +208,7 @@ saveUrlsBtn.addEventListener('click', () => {
             currentUrls[input.name] = input.value;
         }
     });
-    
+
     if (!hasError) {
         localStorage.setItem('simulationUrls', JSON.stringify(currentUrls));
         // Re-render current view to catch updates
