@@ -11,6 +11,7 @@
     --card-bg-wifi: rgba(113, 63, 18, 0.25);
     --card-bg-gnss: rgba(127, 29, 29, 0.25);
     --card-bg-rfid: rgba(17, 94, 89, 0.25);
+    --card-bg-6g: rgba(180, 160, 20, 0.5);
 
     /* Card Borders (Glassmorphism) */
     --card-border-5g: rgba(59, 130, 246, 0.4);
@@ -19,6 +20,7 @@
     --card-border-wifi: rgba(234, 179, 8, 0.4);
     --card-border-gnss: rgba(239, 68, 68, 0.4);
     --card-border-rfid: rgba(20, 184, 166, 0.4);
+    --card-border-6g: rgba(234, 179, 8, 0.6);
 }
 
 * {
@@ -148,6 +150,7 @@ body {
 .card-WiFi { background-color: var(--card-bg-wifi); border-color: var(--card-border-wifi) }
 .card-GNSS { background-color: var(--card-bg-gnss); border-color: var(--card-border-gnss) }
 .card-RFID { background-color: var(--card-bg-rfid); border-color: var(--card-border-rfid) }
+.card-6G { background-color: var(--card-bg-6g); border-color: var(--card-border-6g) }
 
 footer .tip {
     font-size: 0.85rem;

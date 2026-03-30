@@ -22,7 +22,7 @@ const studios = [
         description: 'mmWave Phased Array antennas and Beamforming simulations.',
         themeClass: 'card-mmWave',
         simulations: [
-            { id: 'mmwave_mod', title: 'mmWave Link Budget Analysis', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
+            { id: 'mmwave_mod', title: 'mmWave Link', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
             { id: 'mmwave_sidelobe', title: 'mmWave Sidelobe Improve', description: 'Sidelobe improvement and suppression techniques.', defaultUrl: 'https://mmwave-side-lobe-calibration-yvgl6dyq4moun2hqhkwwt7.streamlit.app' },
             { id: 'mmwave_phase', title: 'mmWave Phase shifter Calibration', description: 'Phase shifter calibration algorithms.', defaultUrl: 'https://example.com/phase' }
         ]
@@ -37,6 +37,17 @@ const studios = [
             { id: 'si_sim', title: 'SI Simulation', description: 'Signal Integrity (SI) analysis and visualization.', defaultUrl: 'https://signalintegrationsimulation-tool-otcmwvh5hdwhr2n2dbvoox.streamlit.app' },
             { id: 'pi_sim', title: 'PI Simulation', description: 'Power Integrity (PI) analysis and visualization.', defaultUrl: 'https://pdn-simulation-xv6ckuvqlrezcepkjjyes4.streamlit.app' },
             { id: 'impedance_control', title: 'Impedance Control', description: 'Impedance control analysis and visualization.', defaultUrl: 'https://impedance-calculation-kejk5wu4g7vbeo9ks2nsiy.streamlit.app' }
+        ]
+    },
+    {
+        id: '6g_studio',
+        title: '6G Technology Concept Research Studio',
+        shortTitle: '6G Technology Concept Research Studio',
+        description: '6G Technology Concept Research and Simulations.',
+        themeClass: 'card-6G',
+        simulations: [
+            { id: '6g_ai_ran', title: 'Next Generation AI RAN Simulation', description: 'AI RAN simulation and analysis.', defaultUrl: 'https://example.com/ai-ran' },
+            { id: '6g_noma', title: 'Next Generation NOMA Technology Simulation', description: 'NOMA Technology concepts and visualization.', defaultUrl: 'https://example.com/noma' }
         ]
     }
 ];
@@ -209,7 +220,7 @@ saveUrlsBtn.addEventListener('click', () => {
             hasError = true;
         } else {
             currentUrls[input.name] = input.value;
-            
+
             // Only save if it differs from the default URL
             const sim = getAllSimulations().find(s => s.id === input.name);
             if (sim && input.value !== sim.defaultUrl) {
