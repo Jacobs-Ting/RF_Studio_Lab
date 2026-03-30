@@ -46,7 +46,7 @@ const studios = [
         description: '6G Technology Concept Research and Simulations.',
         themeClass: 'card-6G',
         simulations: [
-            { id: '6g_ai_ran', title: 'Next Generation AI RAN Simulation', description: 'AI RAN simulation and analysis.', defaultUrl: 'https://example.com/ai-ran' },
+            { id: '6g_ai_ran', title: 'Next Generation AI RAN Simulation', description: 'AI RAN simulation and analysis.', defaultUrl: 'https://ai-ran-web-jtjskvxcpt7knxwkk5deqn.streamlit.app' },
             { id: '6g_noma', title: 'Next Generation NOMA Technology Simulation', description: 'NOMA Technology concepts and visualization.', defaultUrl: 'https://example.com/noma' }
         ]
     }
