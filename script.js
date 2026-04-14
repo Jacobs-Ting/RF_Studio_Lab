@@ -7,7 +7,7 @@ const studios = [
         description: 'Advanced communication physical layer (PHY) simulation platforms.',
         themeClass: 'card-5G_NR',
         simulations: [
-            { id: '5G_NR', title: '5G NR', description: 'Visualizes 5G NR physical layer resource allocation and Resource Block (RB) mapping mechanisms.', defaultUrl: 'https://5g-nr-phy-resource-simulation-ffbjp7jxsfr5nldwzazayk.streamlit.app' },
+            { id: '5G_NR', title: '5G NR', description: 'Visualizes 5G NR physical layer resource allocation and Resource Block (RB) mapping mechanisms.', defaultUrl: 'https://jacobs-ting.github.io/5GNR_Web/' },
             { id: 'GNSS', title: 'GNSS', description: 'Simulates Global Navigation Satellite System (GNSS) signal acquisition, Doppler shift, and positioning algorithms.', defaultUrl: 'https://gnsssimulation-jnhfeccymaqxgjgact2daf.streamlit.app' },
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
