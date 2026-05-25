@@ -17,7 +17,10 @@
                     <button id="back-btn" class="icon-btn" style="display: none; font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">Back</button>
                     <h1 class="main-title" id="page-title">Research Studios</h1>
                 </div>
-                <button id="settings-btn" class="icon-btn" title="Configure Links" style="font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">Settings</button>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button id="disclaimer-btn" class="icon-btn" title="Disclaimer" style="font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">免責聲明</button>
+                    <button id="settings-btn" class="icon-btn" title="Configure Links" style="font-size: 1.1rem; background: rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 8px;">Settings</button>
+                </div>
             </div>
 
             <h2 class="subtitle" id="page-subtitle">Select a research studio to view advanced simulation platforms.</h2>
@@ -49,6 +52,41 @@
             </form>
             <div class="modal-actions">
                 <button type="button" id="save-urls" class="btn primary">Save Links</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Disclaimer -->
+    <div id="disclaimer-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>免責聲明與使用條款 (Disclaimer)</h2>
+                <button id="close-disclaimer-modal" class="icon-btn">&times;</button>
+            </div>
+            <div style="color: var(--text-primary); line-height: 1.8; font-size: 0.92rem; text-align: justify; margin-bottom: 1.5rem; max-height: 50vh; overflow-y: auto; padding-right: 0.75rem;">
+                <h3 style="margin-bottom: 0.75rem; border-bottom: 1px solid #1f2937; padding-bottom: 0.25rem; color: #60a5fa;">中文版 (Chinese Version)</h3>
+                <ol style="padding-left: 1.2rem; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+                    <li><strong>技術來源與智慧財產權聲明：</strong>本網站所提供之所有模擬程式，其底層架構均基於公開且具普適性之技術規格、物理模型及學術演算法。本網站嚴正聲明，絕無採用、反組譯或侵權任何商業化電子設計自動化 (EDA) 軟體之專有演算法或受保護之數據。</li>
+                    <li><strong>商業機密與數據中立性：</strong>本網站所有模擬工具皆為獨立開發，其運作與測試過程皆未涉及、引用或使用任何特定企業內部之專案資料、未公開之測試數據及專有硬體規格，充分保障商業機密之中立性。</li>
+                    <li><strong>學術性質與獨立創作聲明：</strong>本網站及其衍生之內容純屬個人基於學術研究與技術交流目的所進行之獨立創作，概不代表任何公司、企業實體或特定組織之官方立場或機構作品。</li>
+                    <li><strong>結果參考性與免責限制：</strong>本網站提供之各項模擬結果，皆源自基礎物理模型之近似運算，僅供初期設計概念驗證與學術探討之參考。該結果不具備工程決策之絕對效力，亦無法取代專業之電磁 (EM) 數值模擬軟體。使用者於實務應用時應自行驗證，本網站對因使用本服務而衍生之任何直接或間接損害，概不負法律及商業賠償責任。</li>
+                    <li><strong>智慧財產權與防範盜版聲明：</strong>本網站之網頁設計、程式碼結構、介面視覺設計及所連結之模擬工具核心演算法，均屬原創作者所有，並受著作權法與智慧財產權法保護。未經原作者事前書面明確授權，嚴禁任何個人或第三方進行整站拷貝、重製、修改、散佈、反向工程，或將本網站之任何部分用於商業用途。如有違反，作者保留依法追究法律責任與請求損害賠償之權利。</li>
+                    <li><strong>研究能力與合約歸屬聲明：</strong>本網站展示的是我的公開研究能力，不是任何公司、客戶或過往專案的延伸。未來若因公司職務、顧問合約或委託開發所產生的成果，將依合約歸屬，不會未經授權公開。</li>
+                </ol>
+
+                <h3 style="margin-bottom: 0.75rem; border-bottom: 1px solid #1f2937; padding-bottom: 0.25rem; color: #60a5fa;">English Version</h3>
+                <ol style="padding-left: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><strong>Source of Technology and Intellectual Property:</strong> All simulation programs provided on this website are based on public and universal technical specifications, physical models, and academic algorithms. This website strictly declares that it does not adopt, decompile, or infringe upon any proprietary algorithms or protected data of any commercial Electronic Design Automation (EDA) software.</li>
+                    <li><strong>Trade Secrets and Data Neutrality:</strong> All simulation tools on this website are independently developed. Their operation and testing processes do not involve, reference, or use any internal project data, unpublished test data, or proprietary hardware specifications of any specific enterprise, fully safeguarding the neutrality and confidentiality of trade secrets.</li>
+                    <li><strong>Academic Nature and Independent Creation:</strong> This website and its derived content are purely independent creations for the purposes of academic research and technical exchange. They do not represent the official stance, nor are they works-for-hire, of any company, corporate entity, or specific organization.</li>
+                    <li><strong>Reference Only and Limitation of Liability:</strong> All simulation results provided on this website are derived from approximations of basic physical models and are for initial design concept verification and academic discussion reference only. The results do not hold absolute authority for engineering decisions and cannot replace professional electromagnetic (EM) numerical simulation software. Users must perform their own verification in practical applications. This website assumes no legal or commercial liability for any direct or indirect damages arising from the use of these services.</li>
+                    <li><strong>Intellectual Property and Anti-Piracy Notice:</strong> The web design, code structure, visual layout, and core algorithms of the linked simulation tools of this website are owned by the original author and protected by copyright and intellectual property laws. Without prior explicit written authorization from the author, any copying, reproduction, modification, distribution, reverse engineering, or commercial use of any part of this website by any individual or third party is strictly prohibited. In case of violation, the author reserves the right to pursue legal actions and claim damages.</li>
+                    <li><strong>Research Capability and Contractual Compliance:</strong> This website demonstrates my public research capability and is not an extension of any company, client, or past projects. Any future results generated due to employment duties, consulting agreements, or commissioned development will be attributed in accordance with the contracts and will not be disclosed without authorization.</li>
+                </ol>
+            </div>
+            <div class="modal-actions" id="disclaimer-actions" style="display: none; justify-content: flex-end; gap: 1rem;">
+                <button type="button" id="decline-disclaimer-btn" class="btn" style="background-color: #374151; color: white;">拒絕並退出 / Decline</button>
+                <button type="button" id="agree-disclaimer-btn" class="btn primary">我已閱讀並同意以上條款 / I Agree</button>
             </div>
         </div>
     </div>
