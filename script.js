@@ -24,9 +24,9 @@ const studios = [
         isSubStudio: true,
         simulations: [
             { id: 'NR_TS38211', title: 'TS 38.211 Simulation', description: 'Visualizes 5G NR physical layer channel mapping, modulation, and Resource Block (RB) structures.', defaultUrl: 'https://jacobs-ting.github.io/5GNR_Web/' },
-            { id: 'NR_TS38212', title: 'TS 38.212 Simulation', description: 'Simulates 5G NR multiplexing and channel coding, including LDPC and Polar codes.', defaultUrl: 'https://ts38212-simulation.streamlit.app' },
-            { id: 'NR_TS38213', title: 'TS 38.213 (PRACH) Simulation', description: 'Simulates 5G NR physical layer procedures for control, including PRACH preamble generation and detection.', defaultUrl: 'https://ts38213-prach-simulation.streamlit.app' },
-            { id: 'NR_TS38101_1', title: 'TS 38.101-1 Simulation', description: 'Simulates 3GPP TS 38.101-1 User Equipment (UE) FR1 radio transmission and reception conformance requirements.', defaultUrl: 'https://ts38101-1-simulation.streamlit.app' }
+            { id: 'NR_TS38212', title: 'TS 38.212 Simulation', description: 'Simulates 5G NR multiplexing and channel coding, including LDPC and Polar codes.', defaultUrl: 'https://jacobs-ting.github.io/TS-38.212-Simulation/' },
+            { id: 'NR_TS38213', title: 'TS 38.213 (PRACH) Simulation', description: 'Simulates 5G NR physical layer procedures for control, including PRACH preamble generation and detection.', defaultUrl: 'https://jacobs-ting.github.io/TS-38.213-PRACH/' },
+            { id: 'NR_TS38101_1', title: 'TS 38.101-1 Simulation', description: 'Simulates 3GPP TS 38.101-1 User Equipment (UE) FR1 radio transmission and reception conformance requirements.', defaultUrl: 'https://jacobs-ting.github.io/5G-NR-Conformance-Test/' }
         ]
     },
     {
@@ -38,7 +38,7 @@ const studios = [
         isSubStudio: true,
         simulations: [
             { id: 'Bluetooth_PHY', title: 'Bluetooth PHY Simulation', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-mbz7pibmpmdd2hmnjnkzmc.streamlit.app' },
-            { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://bluetooth-channel-sounding.streamlit.app' }
+            { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://jacobs-ting.github.io/BT_Channel-sounding/' }
         ]
     },
     {
@@ -51,7 +51,7 @@ const studios = [
             { id: 'mmwave_mod', title: 'mmWave Link', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
             { id: 'mmwave_sidelobe', title: 'mmWave Sidelobe Improve', description: 'Sidelobe improvement and suppression techniques.', defaultUrl: 'https://mmwave-side-lobe-calibration-yvgl6dyq4moun2hqhkwwt7.streamlit.app' },
             { id: 'mmwave_phase', title: 'mmWave Phase shifter Calibration', description: 'Phase shifter calibration algorithms.', defaultUrl: 'https://mmwave-phase-shifter-xacf2hpzygwnchnfeq3rgb.streamlit.app' },
-            { id: 'mmwave_ts38101', title: 'TS 38.101-2 simulation', description: 'Simulates 3GPP TS 38.101-2 User Equipment (UE) FR2 radio transmission and reception requirements.', defaultUrl: 'https://ts38101-2-simulation.streamlit.app' }
+            { id: 'mmwave_ts38101', title: 'TS 38.101-2 simulation', description: 'Simulates 3GPP TS 38.101-2 User Equipment (UE) FR2 radio transmission and reception requirements.', defaultUrl: 'https://jacobs-ting.github.io/38.101-2-Simulation/' }
         ]
     },
     {
@@ -84,12 +84,41 @@ const studios = [
         description: 'AI-optimized RF system design, filter synthesis, and impedance matching tools.',
         themeClass: 'card-WiFi',
         simulations: [
-            { id: 'rf_link_budget', title: 'AI-Assisted RF Link Budget Analyzer', description: 'Integrates multi-physics and system-level signal parameters to rapidly evaluate TX and RX link budget characteristics. Features an AI-driven capability to automatically extract critical parameters directly from component datasheets.', defaultUrl: 'https://rf-link-budget-simulation.streamlit.app' },
-            { id: 'filter_design', title: 'AI-Assisted Filter Design', description: 'Allows users to define custom parameters while an AI engine automatically selects optimal components to synthesize the filter. Uniquely incorporates real-world parasitic effects into the simulation to ensure accuracy.', defaultUrl: 'https://rf-filter-design.streamlit.app' },
-            { id: 'impedance_matching', title: 'AI-Assisted RF Impedance Matching', description: 'The impedance matching network is automatically synthesized using an AI-optimized algorithm, and parasitic effects are incorporated to make the simulation results closer to actual SMT components.', defaultUrl: 'https://rf-impedance-matching.streamlit.app' }
+            { id: 'rf_link_budget', title: 'AI-Assisted RF Link Budget Analyzer', description: 'Integrates multi-physics and system-level signal parameters to rapidly evaluate TX and RX link budget characteristics. Features an AI-driven capability to automatically extract critical parameters directly from component datasheets.', defaultUrl: 'https://link-budget-analysis-wjp3cxm87dm7ftqfvdqebg.streamlit.app/' },
+            { id: 'filter_design', title: 'AI-Assisted Filter Design', description: 'Allows users to define custom parameters while an AI engine automatically selects optimal components to synthesize the filter. Uniquely incorporates real-world parasitic effects into the simulation to ensure accuracy.', defaultUrl: 'https://ai-filter-simulation-47kq2tjn6k6kx7nvsqu5hf.streamlit.app/' },
+            { id: 'impedance_matching', title: 'AI-Assisted RF Impedance Matching', description: 'The impedance matching network is automatically synthesized using an AI-optimized algorithm, and parasitic effects are incorporated to make the simulation results closer to actual SMT components.', defaultUrl: 'https://ai-smith-n3ykcaxsikrmwxfeqepcid.streamlit.app/' }
         ]
     }
 ];
+
+// Memory-based fallback in case localStorage is blocked
+const memoryStorage = {};
+const safeStorage = {
+    getItem: (key) => {
+        try {
+            return window.localStorage.getItem(key);
+        } catch (e) {
+            console.warn('localStorage.getItem access failed, using memory fallback:', e);
+            return memoryStorage[key] || null;
+        }
+    },
+    setItem: (key, value) => {
+        try {
+            window.localStorage.setItem(key, value);
+        } catch (e) {
+            console.warn('localStorage.setItem access failed, using memory fallback:', e);
+            memoryStorage[key] = String(value);
+        }
+    },
+    removeItem: (key) => {
+        try {
+            window.localStorage.removeItem(key);
+        } catch (e) {
+            console.warn('localStorage.removeItem access failed, using memory fallback:', e);
+            delete memoryStorage[key];
+        }
+    }
+};
 
 // Helper to flatten simulations to handle URLs easily
 const getAllSimulations = () => {
@@ -107,10 +136,16 @@ const loadUrls = () => {
 
     // We use a new key 'simulationUrls_v2' to avoid loading stale defaults 
     // from an older version where all URLs were saved.
-    const saved = localStorage.getItem('simulationUrls_v2');
-    if (saved) {
-        const parsed = JSON.parse(saved);
-        return { ...defaults, ...parsed };
+    try {
+        const saved = safeStorage.getItem('simulationUrls_v2');
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            if (parsed && typeof parsed === 'object') {
+                return { ...defaults, ...parsed };
+            }
+        }
+    } catch (e) {
+        console.error('Failed to parse saved simulation URLs:', e);
     }
     return defaults;
 };
@@ -119,6 +154,7 @@ const loadUrls = () => {
 let currentUrls = loadUrls();
 let currentStudioId = null; // null means Main Menu
 
+
 // DOM Elements
 const cardsContainer = document.getElementById('cards-container');
 const modal = document.getElementById('url-modal');
@@ -126,6 +162,7 @@ const form = document.getElementById('url-form');
 const settingsBtn = document.getElementById('settings-btn');
 const closeModalBtn = document.getElementById('close-modal');
 const saveUrlsBtn = document.getElementById('save-urls');
+const resetUrlsBtn = document.getElementById('reset-urls');
 
 const disclaimerBtn = document.getElementById('disclaimer-btn');
 const disclaimerModal = document.getElementById('disclaimer-modal');
@@ -141,7 +178,7 @@ const showDisclaimer = (forceConsent = false) => {
         disclaimerActions.style.display = 'flex';
     } else {
         closeDisclaimerModalBtn.style.display = 'block';
-        if (localStorage.getItem('disclaimer_accepted') === 'true') {
+        if (safeStorage.getItem('disclaimer_accepted') === 'true') {
             disclaimerActions.style.display = 'none';
         } else {
             disclaimerActions.style.display = 'flex';
@@ -188,6 +225,18 @@ const renderFolders = () => {
     });
 };
 
+// Helper to get simulation specific theme class or fallback to studio theme class
+const getSimThemeClass = (sim, studio) => {
+    const mapping = {
+        'nr5g_menu': 'card-5G_NR',
+        'GNSS': 'card-GNSS',
+        'WiFi': 'card-WiFi',
+        'RFID': 'card-RFID',
+        'bluetooth_menu': 'card-Bluetooth',
+    };
+    return mapping[sim.id] || studio.themeClass;
+};
+
 // Render specific Studio
 const renderStudio = (studioId) => {
     currentStudioId = studioId;
@@ -203,14 +252,16 @@ const renderStudio = (studioId) => {
     backBtn.style.display = 'block';
 
     studio.simulations.forEach(sim => {
+        const isMenu = (sim.id === 'bluetooth_menu' || sim.id === 'nr5g_menu');
+        const card = document.createElement(isMenu ? 'div' : 'a');
         const url = currentUrls[sim.id];
-        const card = document.createElement('a');
-        card.href = url;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
-        // Give sub-cards the parent folder's theme class for consistency, or pick uniquely.
-        // We will default to parent theme class.
-        card.className = `card ${studio.themeClass}`;
+
+        if (!isMenu) {
+            card.href = url;
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+        }
+        card.className = `card ${getSimThemeClass(sim, studio)}`;
 
         card.innerHTML = `
             <h3>${sim.title}</h3>
@@ -224,10 +275,12 @@ const renderStudio = (studioId) => {
             } else if (sim.id === 'nr5g_menu') {
                 e.preventDefault();
                 renderStudio('nr5g_studio');
-            } else if (localStorage.getItem('disclaimer_accepted') !== 'true') {
-                e.preventDefault();
-                pendingUrl = url;
-                showDisclaimer(true);
+            } else if (safeStorage.getItem('disclaimer_accepted') !== 'true') {
+                if (!isMenu) {
+                    e.preventDefault();
+                    pendingUrl = url;
+                    showDisclaimer(true);
+                }
             }
         });
 
@@ -296,14 +349,14 @@ closeDisclaimerModalBtn.addEventListener('click', () => {
 
 disclaimerModal.addEventListener('click', (e) => {
     if (e.target === disclaimerModal) {
-        if (localStorage.getItem('disclaimer_accepted') === 'true') {
+        if (safeStorage.getItem('disclaimer_accepted') === 'true') {
             disclaimerModal.classList.remove('active');
         }
     }
 });
 
 agreeDisclaimerBtn.addEventListener('click', () => {
-    localStorage.setItem('disclaimer_accepted', 'true');
+    safeStorage.setItem('disclaimer_accepted', 'true');
     disclaimerModal.classList.remove('active');
     if (pendingUrl) {
         window.open(pendingUrl, '_blank', 'noopener,noreferrer');
@@ -326,6 +379,7 @@ backBtn.addEventListener('click', () => {
 saveUrlsBtn.addEventListener('click', () => {
     const inputs = form.querySelectorAll('input');
     let hasError = false;
+    const tempUrls = {};
     const overrides = {};
 
     inputs.forEach(input => {
@@ -333,7 +387,7 @@ saveUrlsBtn.addEventListener('click', () => {
             input.reportValidity();
             hasError = true;
         } else {
-            currentUrls[input.name] = input.value;
+            tempUrls[input.name] = input.value;
 
             // Only save if it differs from the default URL
             const sim = getAllSimulations().find(s => s.id === input.name);
@@ -344,8 +398,11 @@ saveUrlsBtn.addEventListener('click', () => {
     });
 
     if (!hasError) {
+        // Safe update: merge inputs into state only on complete validation success
+        Object.assign(currentUrls, tempUrls);
+
         // Save only explicit overrides so code updates to defaultUrl take effect automatically
-        localStorage.setItem('simulationUrls_v2', JSON.stringify(overrides));
+        safeStorage.setItem('simulationUrls_v2', JSON.stringify(overrides));
         // Re-render current view to catch updates
         if (currentStudioId) {
             renderStudio(currentStudioId);
@@ -356,8 +413,21 @@ saveUrlsBtn.addEventListener('click', () => {
     }
 });
 
+if (resetUrlsBtn) {
+    resetUrlsBtn.addEventListener('click', () => {
+        safeStorage.removeItem('simulationUrls_v2');
+        currentUrls = loadUrls(); // reload from defaults now that storage is empty
+        if (currentStudioId) {
+            renderStudio(currentStudioId);
+        } else {
+            renderFolders();
+        }
+        modal.classList.remove('active');
+    });
+}
+
 // Initial Render
 renderFolders();
-if (localStorage.getItem('disclaimer_accepted') !== 'true') {
+if (safeStorage.getItem('disclaimer_accepted') !== 'true') {
     showDisclaimer(true);
 }

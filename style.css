@@ -76,7 +76,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.25rem;
     margin-bottom: 2.5rem;
 }
@@ -168,6 +168,10 @@ footer .tip {
 }
 
 .icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.icon-btn.rotate:hover {
     transform: scale(1.1) rotate(15deg);
 }
 
@@ -248,6 +252,7 @@ footer .tip {
     margin-top: 1.5rem;
     display: flex;
     justify-content: flex-end;
+    gap: 0.75rem;
 }
 
 .btn {
@@ -266,6 +271,15 @@ footer .tip {
 
 .btn.primary:hover {
     background-color: #1d4ed8;
+}
+
+.btn.secondary {
+    background-color: #374151;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #4b5563;
 }
 
 @media (max-width: 600px) {
