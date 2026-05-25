@@ -12,7 +12,7 @@ const studios = [
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
             { id: 'bluetooth_menu', title: 'Bluetooth Simulation', description: 'Access Bluetooth physical layer (PHY) and Channel Sounding simulation platforms.', defaultUrl: '#' },
-            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-qfcr6baya9fmwrhmyb4shm.streamlit.app' }
+            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-bnyt7bscfhzesxtxkzvgag.streamlit.app/' }
         ]
     },
     {
