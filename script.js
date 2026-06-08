@@ -12,7 +12,8 @@ const studios = [
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
             { id: 'bluetooth_menu', title: 'Bluetooth Simulation', description: 'Access Bluetooth physical layer (PHY) and Channel Sounding simulation platforms.', defaultUrl: '#' },
-            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-bnyt7bscfhzesxtxkzvgag.streamlit.app/' }
+            { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-bnyt7bscfhzesxtxkzvgag.streamlit.app/' },
+            { id: 'LPWAN', title: 'Low power WAN', description: 'LoRa WAN, NB-IOT, SigFox, Wi-SUN, 802.11ah.', defaultUrl: 'https://jacobs-ting.github.io/LPWAN_Table/', span: 'full' }
         ]
     },
     {
@@ -233,6 +234,7 @@ const getSimThemeClass = (sim, studio) => {
         'WiFi': 'card-WiFi',
         'RFID': 'card-RFID',
         'bluetooth_menu': 'card-Bluetooth',
+        'LPWAN': 'card-LPWAN',
     };
     return mapping[sim.id] || studio.themeClass;
 };
@@ -253,15 +255,19 @@ const renderStudio = (studioId) => {
 
     studio.simulations.forEach(sim => {
         const isMenu = (sim.id === 'bluetooth_menu' || sim.id === 'nr5g_menu');
-        const card = document.createElement(isMenu ? 'div' : 'a');
+        const isStatic = sim.isStatic === true;
+        const card = document.createElement(isMenu || isStatic ? 'div' : 'a');
         const url = currentUrls[sim.id];
 
-        if (!isMenu) {
+        if (!isMenu && !isStatic) {
             card.href = url;
             card.target = '_blank';
             card.rel = 'noopener noreferrer';
         }
         card.className = `card ${getSimThemeClass(sim, studio)}`;
+        if (sim.span === 'full') {
+            card.classList.add('card-full');
+        }
 
         card.innerHTML = `
             <h3>${sim.title}</h3>
@@ -275,7 +281,7 @@ const renderStudio = (studioId) => {
             } else if (sim.id === 'nr5g_menu') {
                 e.preventDefault();
                 renderStudio('nr5g_studio');
-            } else if (safeStorage.getItem('disclaimer_accepted') !== 'true') {
+            } else if (!isStatic && safeStorage.getItem('disclaimer_accepted') !== 'true') {
                 if (!isMenu) {
                     e.preventDefault();
                     pendingUrl = url;
@@ -295,7 +301,7 @@ const renderForm = () => {
     // Create sections for each studio to make the form easier to read
     studios.forEach(studio => {
         // Skip header if all simulations are ignored
-        const configurableSims = studio.simulations.filter(sim => sim.id !== 'bluetooth_menu' && sim.id !== 'nr5g_menu');
+        const configurableSims = studio.simulations.filter(sim => sim.id !== 'bluetooth_menu' && sim.id !== 'nr5g_menu' && !sim.isStatic);
         if (configurableSims.length === 0) return;
 
         const header = document.createElement('h3');
