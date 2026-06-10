@@ -13,7 +13,8 @@ const studios = [
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
             { id: 'bluetooth_menu', title: 'Bluetooth Simulation', description: 'Access Bluetooth physical layer (PHY) and Channel Sounding simulation platforms.', defaultUrl: '#' },
             { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-bnyt7bscfhzesxtxkzvgag.streamlit.app/' },
-            { id: 'LPWAN', title: 'Low power WAN', description: 'LoRa WAN, NB-IOT, SigFox, Wi-SUN, 802.11ah.', defaultUrl: 'https://jacobs-ting.github.io/LPWAN_Table/', span: 'full' }
+            { id: 'LPWAN', title: 'Low power WAN', description: 'LoRa WAN, NB-IOT, SigFox, Wi-SUN, 802.11ah.', defaultUrl: 'https://jacobs-ting.github.io/LPWAN_Table/' },
+            { id: 'defense_tech_menu', title: 'Defense Technology', description: 'Non-Terrestrial Network (NTN) and Unmanned Aerial Vehicle (UAV) simulations.', defaultUrl: '#' }
         ]
     },
     {
@@ -40,6 +41,18 @@ const studios = [
         simulations: [
             { id: 'Bluetooth_PHY', title: 'Bluetooth PHY Simulation', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-alfbuzptsqjnastbuxjucf.streamlit.app/' },
             { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://jacobs-ting.github.io/BT_Channel-sounding/' }
+        ]
+    },
+    {
+        id: 'defense_tech_studio',
+        title: 'Defense Technology Research Studio',
+        shortTitle: 'Defense Technology Research Studio',
+        description: 'Non-Terrestrial Network (NTN) and Unmanned Aerial Vehicle (UAV) simulations.',
+        themeClass: 'card-DefenseTech',
+        isSubStudio: true,
+        simulations: [
+            { id: 'defense_ntn', title: 'NTN (Non-Terrestrial Network)', description: 'Simulates Non-Terrestrial Network satellite-based communication links and coverage analysis.', defaultUrl: 'https://jacobs-ting.github.io/NTN-Simulation/' },
+            { id: 'defense_uav', title: 'UAV (Unmanned Aerial Vehicle)', description: 'Simulates UAV communication links, trajectory planning, and air-to-ground channel modeling.', defaultUrl: 'https://jacobs-ting.github.io/Drone_Simulation/' }
         ]
     },
     {
@@ -235,6 +248,7 @@ const getSimThemeClass = (sim, studio) => {
         'RFID': 'card-RFID',
         'bluetooth_menu': 'card-Bluetooth',
         'LPWAN': 'card-LPWAN',
+        'defense_tech_menu': 'card-DefenseTech',
     };
     return mapping[sim.id] || studio.themeClass;
 };
@@ -254,7 +268,7 @@ const renderStudio = (studioId) => {
     backBtn.style.display = 'block';
 
     studio.simulations.forEach(sim => {
-        const isMenu = (sim.id === 'bluetooth_menu' || sim.id === 'nr5g_menu');
+        const isMenu = (sim.id === 'bluetooth_menu' || sim.id === 'nr5g_menu' || sim.id === 'defense_tech_menu');
         const isStatic = sim.isStatic === true;
         const card = document.createElement(isMenu || isStatic ? 'div' : 'a');
         const url = currentUrls[sim.id];
@@ -281,6 +295,9 @@ const renderStudio = (studioId) => {
             } else if (sim.id === 'nr5g_menu') {
                 e.preventDefault();
                 renderStudio('nr5g_studio');
+            } else if (sim.id === 'defense_tech_menu') {
+                e.preventDefault();
+                renderStudio('defense_tech_studio');
             } else if (!isStatic && safeStorage.getItem('disclaimer_accepted') !== 'true') {
                 if (!isMenu) {
                     e.preventDefault();
@@ -301,7 +318,7 @@ const renderForm = () => {
     // Create sections for each studio to make the form easier to read
     studios.forEach(studio => {
         // Skip header if all simulations are ignored
-        const configurableSims = studio.simulations.filter(sim => sim.id !== 'bluetooth_menu' && sim.id !== 'nr5g_menu' && !sim.isStatic);
+        const configurableSims = studio.simulations.filter(sim => sim.id !== 'bluetooth_menu' && sim.id !== 'nr5g_menu' && sim.id !== 'defense_tech_menu' && !sim.isStatic);
         if (configurableSims.length === 0) return;
 
         const header = document.createElement('h3');
@@ -375,7 +392,7 @@ declineDisclaimerBtn.addEventListener('click', () => {
 });
 
 backBtn.addEventListener('click', () => {
-    if (currentStudioId === 'bluetooth_studio' || currentStudioId === 'nr5g_studio') {
+    if (currentStudioId === 'bluetooth_studio' || currentStudioId === 'nr5g_studio' || currentStudioId === 'defense_tech_studio') {
         renderStudio('rf_studio');
     } else {
         renderFolders();
