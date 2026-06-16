@@ -11,7 +11,7 @@ const studios = [
             { id: 'GNSS', title: 'GNSS', description: 'Simulates Global Navigation Satellite System (GNSS) signal acquisition, Doppler shift, and positioning algorithms.', defaultUrl: 'https://gnsssimulation-jnhfeccymaqxgjgact2daf.streamlit.app' },
             { id: 'WiFi', title: 'WiFi', description: 'Analyzes WiFi OFDM/QAM constellation diagrams and simulates Multipath Fading.', defaultUrl: 'https://jacobs-ting.github.io/WiFi-PHY-Simulation_HTML/' },
             { id: 'RFID', title: 'RFID', description: 'Simulates RFID self-jamming mitigation and echo cancellation algorithms.', defaultUrl: 'https://rfidsimulation-vr944rmwfifivhdbbrfhuf.streamlit.app' },
-            { id: 'bluetooth_menu', title: 'Bluetooth Simulation', description: 'Access Bluetooth physical layer (PHY) and Channel Sounding simulation platforms.', defaultUrl: '#' },
+            { id: 'bluetooth_menu', title: 'Bluetooth Simulation', description: 'Access Bluetooth physical layer (PHY), Channel Sounding, and TWS radiation pattern simulation platforms.', defaultUrl: '#' },
             { id: 'UWB', title: 'UWB', description: 'Ultra-Wideband physical layer simulation algorithms.', defaultUrl: 'https://uwbsimulation-bnyt7bscfhzesxtxkzvgag.streamlit.app/' },
             { id: 'LPWAN', title: 'Low power WAN', description: 'LoRa WAN, NB-IOT, SigFox, Wi-SUN, 802.11ah.', defaultUrl: 'https://jacobs-ting.github.io/LPWAN_Table/' },
             { id: 'defense_tech_menu', title: 'Defense Technology', description: 'Non-Terrestrial Network (NTN) and Unmanned Aerial Vehicle (UAV) simulations.', defaultUrl: '#' }
@@ -40,7 +40,8 @@ const studios = [
         isSubStudio: true,
         simulations: [
             { id: 'Bluetooth_PHY', title: 'Bluetooth PHY Simulation', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-alfbuzptsqjnastbuxjucf.streamlit.app/' },
-            { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://jacobs-ting.github.io/BT_Channel-sounding/' }
+            { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://jacobs-ting.github.io/BT_Channel-sounding/' },
+            { id: 'Bluetooth_TWS', title: 'Bluetooth TWS Radiation Pattern Simulation', description: 'Simulates Bluetooth TWS antenna radiation patterns, 3D head shadowing effects, and signal coupling/attenuation.', defaultUrl: 'https://jacobs-ting.github.io/TWS_ANT_Pattern/' }
         ]
     },
     {
