@@ -63,7 +63,7 @@ const studios = [
         description: 'mmWave Phased Array antennas and Beamforming simulations.',
         themeClass: 'card-mmWave',
         simulations: [
-            { id: 'mmwave_mod', title: 'mmWave Link', description: 'mmWave specific modulation analysis.', defaultUrl: 'https://mmwave-simulation-rpdmnfu328sks6wjgmcaq4.streamlit.app' },
+            { id: 'mmwave_mod', title: 'mmWave Link', description: 'mmWave specific link budget analysis.', defaultUrl: 'https://jacobs-ting.github.io/mmWave_Simulation_HTML/' },
             { id: 'mmwave_sidelobe', title: 'mmWave Sidelobe Improve', description: 'Sidelobe improvement and suppression techniques.', defaultUrl: 'https://mmwave-side-lobe-calibration-yvgl6dyq4moun2hqhkwwt7.streamlit.app' },
             { id: 'mmwave_phase', title: 'mmWave Phase shifter Calibration', description: 'Phase shifter calibration algorithms.', defaultUrl: 'https://mmwave-phase-shifter-xacf2hpzygwnchnfeq3rgb.streamlit.app' },
             { id: 'mmwave_ts38101', title: 'TS 38.101-2 simulation', description: 'Simulates 3GPP TS 38.101-2 User Equipment (UE) FR2 radio transmission and reception requirements.', defaultUrl: 'https://jacobs-ting.github.io/38.101-2-Simulation/' }
