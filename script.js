@@ -41,7 +41,8 @@ const studios = [
         simulations: [
             { id: 'Bluetooth_PHY', title: 'Bluetooth PHY Simulation', description: 'Simulates Bluetooth physical layer modulation, frequency offset, and packet transmission performance.', defaultUrl: 'https://bluetooth-phy-simulation-alfbuzptsqjnastbuxjucf.streamlit.app/' },
             { id: 'Bluetooth_CS', title: 'Channel Sounding Simulation', description: 'Simulates Bluetooth Channel Sounding (CS) phase-based ranging and distance measurement algorithms.', defaultUrl: 'https://jacobs-ting.github.io/BT_Channel-sounding/' },
-            { id: 'Bluetooth_TWS', title: 'Bluetooth TWS Radiation Pattern Simulation', description: 'Simulates Bluetooth TWS antenna radiation patterns, 3D head shadowing effects, and signal coupling/attenuation.', defaultUrl: 'https://jacobs-ting.github.io/TWS_ANT_Pattern/' }
+            { id: 'Bluetooth_TWS', title: 'Bluetooth TWS Radiation Pattern Simulation', description: 'Simulates Bluetooth TWS antenna radiation patterns, 3D head shadowing effects, and signal coupling/attenuation.', defaultUrl: 'https://jacobs-ting.github.io/TWS_ANT_Pattern/' },
+            { id: 'Bluetooth_SmartWatch', title: 'Smart Watch ANT pattern Simulation', description: 'Simulates Smart Watch antenna radiation patterns and wrist detuning effects.', defaultUrl: 'https://jacobs-ting.github.io/Smart-Watch-Simulation/' }
         ]
     },
     {
